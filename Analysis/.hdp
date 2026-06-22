@@ -1,0 +1,10 @@
+dataset Documents {
+
+    source: "hdfs://documents"
+
+    ai {
+        summarize
+        classify
+        embed
+    }
+}
