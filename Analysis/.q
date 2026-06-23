@@ -8,4 +8,3 @@ dataset Documents {
         embed
     }
 }
-
