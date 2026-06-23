@@ -1,6 +1,4 @@
-.
-.
-.
+*/
 q init MyProject 
 q build
 q run
