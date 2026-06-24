@@ -48,3 +48,7 @@ clean:
 	@echo "Cleaning compiled binary files and Java classes..."
 	rm -f $(TARGET_BIN) *.class
 	rm -rf node_modules package-lock.json
+# Run a automated simulated integration test
+test:
+	@echo "Executing real-time pipeline text injection..."
+	node simulate_payload.js
