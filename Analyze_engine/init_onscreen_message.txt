@@ -1,0 +1,11 @@
+📡 Connecting to test socket at: ws://localhost:8080...
+✅ Connection established with server.mjs!
+📤 Sending structural code payload to local pipeline...
+📥 Packet Response from Server pipeline:
+{
+  "status": "success",
+  "engine": "analyzer_engine",
+  "parsedTokens": 4,
+  "compilationStatus": "OK"
+}
+🔌 Test connection closed safely.
