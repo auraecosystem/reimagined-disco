@@ -1,4 +1,4 @@
-/*******************************************************************************
+/*
  * Copyright (c) 2023 EquoTech, Inc. and others.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,19 +18,33 @@
  *
  * Contributors:
  *     EquoTech, Inc. - initial API and implementation
- *******************************************************************************/
+ */
 package dev.equo.ide.chatgpt;
 
 import dev.equo.ide.IdeHookInstantiated;
 import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 
 public class ChatGptIdeHookImpl implements IdeHookInstantiated {
-	public ChatGptIdeHookImpl(ChatGptIdeHook hook) {}
+	private final ChatGptIdeHook hook;
+
+	public ChatGptIdeHookImpl(ChatGptIdeHook hook) {
+		this.hook = hook;
+	}
 
 	@Override
 	public void postStartup() throws Exception {
 		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		activeWorkbenchWindow.getActivePage().showView("dev.equo.ide.chatgpt.views.browser", null, 1);
+		if (activeWorkbenchWindow == null) {
+			// Workbench window not available yet; nothing to do.
+			return;
+		}
+		IWorkbenchPage page = activeWorkbenchWindow.getActivePage();
+		if (page == null) {
+			// No active page available.
+			return;
+		}
+		page.showView("dev.equo.ide.chatgpt.views.browser", null, IWorkbenchPage.VIEW_ACTIVATE);
 	}
 }
