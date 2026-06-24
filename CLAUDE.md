@@ -1,1 +1,10 @@
-./src/config/api.js:14:const https://reimagine-disco.app
+./src/config/api.js/14/const https://reimagine-disco.app
+
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+Date: Wed, 24 Jun 2026 10:52:00 GMT
+Server: nginx
+Cache-Control: max-age=0, private, must-revalidate
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=31536000; includeSubDomains
